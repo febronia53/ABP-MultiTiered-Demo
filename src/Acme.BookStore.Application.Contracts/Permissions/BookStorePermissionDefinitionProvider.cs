@@ -1,6 +1,8 @@
 ﻿using Acme.BookStore.Localization;
+using System.Text.RegularExpressions;
 using Volo.Abp.Authorization.Permissions;
 using Volo.Abp.Localization;
+using static Acme.BookStore.Permissions.BookStorePermissions;
 
 namespace Acme.BookStore.Permissions;
 
@@ -23,7 +25,15 @@ public class BookStorePermissionDefinitionProvider : PermissionDefinitionProvide
         authorsPermission.AddChild(
             BookStorePermissions.Authors.Edit, L("Permission:Authors.Edit"));
         authorsPermission.AddChild(
-            BookStorePermissions.Authors.Delete, L("Permission:Authors.Delete"));
+        BookStorePermissions.Authors.Delete, L("Permission:Authors.Delete"));
+
+
+        var organizationUnitPermission = bookStoreGroup.AddPermission(
+            BookStorePermissions.OrganizationUnits.Default, L("Permission:OrganizationUnits"));
+        organizationUnitPermission.AddChild(BookStorePermissions.OrganizationUnits.Create, L("Permission:OrganizationUnits.Create"));
+        organizationUnitPermission.AddChild(BookStorePermissions.OrganizationUnits.Edit, L("Permission:OrganizationUnits.Edit"));
+        organizationUnitPermission.AddChild(BookStorePermissions.OrganizationUnits.Delete, L("Permission:OrganizationUnits.Delete"));
+
 
     }
 

@@ -70,6 +70,13 @@ public class BookStoreMenuContributor : IMenuContributor
             url: "/Authors"
         ).RequirePermissions(BookStorePermissions.Authors.Default)
     )
+          .AddItem(
+           new ApplicationMenuItem(
+               "BookStore.OrganizationUnits",
+               l["Menu:OrganizationUnits"],
+               url:"/OrganizationUnits"
+               ).RequirePermissions(BookStorePermissions.OrganizationUnits.Default)
+           )
        
    );
 

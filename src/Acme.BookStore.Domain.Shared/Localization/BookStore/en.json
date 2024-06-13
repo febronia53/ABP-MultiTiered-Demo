@@ -43,9 +43,23 @@
     "Authors": "Authors",
     "AuthorDeletionConfirmationMessage": "Are you sure to delete the author '{0}'?",
     "BirthDate": "Birth date",
-    "NewAuthor": "New author"
+    "NewAuthor": "New author",
 
 
+    "Permission:OrganizationUnits": "OrganizationUnit Management",
+    "Permission:OrganizationUnits.Create": "Creating new Organization Unit",
+    "Permission:OrganizationUnits.Edit": "Editing the Organization Unit",
+    "Permission:OrganizationUnits.Delete": "Deleting the Organization Unit",
+
+    "Menu:OrganizationUnits": "Organizations",
+    "OrganizationUnits": "Organization Units",
+    "OrganizationUnitDeletionConfirmationMessage": "Are you sure to delete the Organization '{0}'?",
+    "Code": "Code",
+    "NewOrganizationUnit": "New Organization",
+
+
+    "OrganizationUnitDeletionConfirmationMessage": "Are you sure to delete this organization '{0}'?",
+    "SuccessfullyDeleted": "Successfully deleted!"
 
   }
 }

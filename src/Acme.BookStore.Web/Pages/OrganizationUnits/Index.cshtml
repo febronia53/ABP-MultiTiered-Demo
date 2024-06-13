@@ -1,0 +1,34 @@
+﻿@page
+@using Acme.BookStore.Localization
+@using Acme.BookStore.Permissions
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<BookStoreResource> L
+@inject IAuthorizationService AuthorizationService
+@model Acme.BookStore.Web.Pages.OrganizationUnits.IndexModel
+
+@section scripts
+{
+    <abp-script src="/Pages/OrganizationUnits/Index.js"/>
+}
+
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <abp-card-title>@L["OrganizationUnits"]</abp-card-title>
+            </abp-column>
+            <abp-column size-md="_6" class="text-end">
+                <abp-button id="NewOrganizationUnitButton"
+                            text="@L["NewOrganizationUnit"].Value"
+                            icon="plus"
+                            button-type="Primary" />
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+
+
+    <abp-card-body>
+        <abp-table striped-rows="true" id="OrganizationUnitsTable"></abp-table>
+    </abp-card-body>
+</abp-card>

@@ -1,5 +1,6 @@
 ﻿using Acme.BookStore.Authors;
 using Acme.BookStore.Books;
+using Acme.BookStore.OrganizataionUnits;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
@@ -114,6 +115,13 @@ public class BookStoreDbContext :
             b.HasIndex(x => x.Name);
         });
 
-
-}
+        builder.Entity<OrganizationUnit>(b =>
+            {
+                b.ToTable("OrganizationUnits");
+                b.ConfigureByConvention();
+                b.Property(x => x.DisplayName)
+                .IsRequired()
+                .HasMaxLength(OrganizataionUnits.OrganizationUnitConsts.MaxDisplayNameLength);
+            });
+    }
 }
