@@ -19,16 +19,16 @@
                             [
                                 {
                                     text: l('Edit'),
-                                    //visible:
-                                    //    abp.auth.isGranted('BookStore.OrganizatonUnit.Edit'),
+                                    visible:
+                                        abp.auth.isGranted('BookStore.OrganizationUnits.Edit'),
                                     action: function (data) {
                                         editModal.open({ id: data.record.id });
                                     }
                                 },
                                 {
                                     text: l('Delete'),
-                                    //visible:
-                                    //    abp.auth.isGranted('BookStore.OrganizatonUnit.Delete'),
+                                    visible:
+                                        abp.auth.isGranted('BookStore.OrganizationUnits.Delete'),
                                     confirmMessage: function (data) {
                                         return l(
                                             'OrganizationUnitDeletionConfirmationMessage',
