@@ -58,6 +58,7 @@ public class BookStoreDbContext :
     #endregion
     public DbSet<Book> Books { get; set; }
     public DbSet<Author> Authors { get; set; }
+    public DbSet<OrganizationUnit> organizationUnits { get; set; }
 
 
     public BookStoreDbContext(DbContextOptions<BookStoreDbContext> options)

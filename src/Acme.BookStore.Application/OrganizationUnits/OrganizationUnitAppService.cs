@@ -57,7 +57,7 @@ namespace Acme.BookStore.OrganizationUnits
 
         public async Task<PagedResultDto<OrganizationUnitDto>> GetListAsync()
         {
-            var organizationUnits= await _organizationUnitRepository.GetListAsync();
+            var organizationUnits = await _organizationUnitRepository.GetListAsync();
             return new PagedResultDto<OrganizationUnitDto>(
                 organizationUnits.Count,
                 ObjectMapper.Map<List<OrganizationUnit>,List<OrganizationUnitDto>>(organizationUnits)
