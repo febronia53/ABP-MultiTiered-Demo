@@ -1,7 +1,9 @@
 ﻿using Acme.BookStore.Authors;
 using Acme.BookStore.Books;
 using Acme.BookStore.OrganizataionUnits;
+using Acme.BookStore.PermissionGroups;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations.Schema;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.Data;
@@ -59,7 +61,7 @@ public class BookStoreDbContext :
     public DbSet<Book> Books { get; set; }
     public DbSet<Author> Authors { get; set; }
     public DbSet<OrganizationUnit> organizationUnits { get; set; }
-
+    public DbSet<PermissionGroup> PermissionGroups { get; set; }
 
     public BookStoreDbContext(DbContextOptions<BookStoreDbContext> options)
         : base(options)
@@ -124,5 +126,28 @@ public class BookStoreDbContext :
                 .IsRequired()
                 .HasMaxLength(OrganizataionUnits.OrganizationUnitConsts.MaxDisplayNameLength);
             });
+
+        // Permission Group
+        builder.Entity<PermissionGroup>(b =>
+        {
+
+            b.ToTable(BookStoreConsts.DbTablePrefix + "PermissionGroups",
+                BookStoreConsts.DbSchema);
+            b.ConfigureByConvention();
+
+            b.Property(x => x.Id)
+             .HasMaxLength(PermissionGroupConsts.MaxIdLength)
+             .ValueGeneratedOnAdd();
+            
+            b.Property(x => x.NameAr)
+             .IsRequired()
+             .HasMaxLength(PermissionGroupConsts.MaxNameLength);
+
+            b.Property(x => x.NameEn)
+                .IsRequired()
+                .HasMaxLength(PermissionGroupConsts.MaxNameLength);
+
+        });
+
     }
 }

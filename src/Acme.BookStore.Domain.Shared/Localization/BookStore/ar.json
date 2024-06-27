@@ -3,6 +3,12 @@
   "texts": {
     "Menu:Home": "الصفحة الرئيسية",
     "Welcome": "مرحباً",
-    "LongWelcomeMessage": "مرحبا بكم في التطبيق. هذا مشروع بدء تشغيل يعتمد على إطار عمل ABP. لمزيد من المعلومات ، يرجى زيارة abp.io."
+    "LongWelcomeMessage": "مرحبا بكم في التطبيق. هذا مشروع بدء تشغيل يعتمد على إطار عمل ABP. لمزيد من المعلومات ، يرجى زيارة abp.io.",
+
+    //permission group   
+    "Permission:PermissionGroups": "ادارة مجموعة الاذونات",
+    "Permission:PermissionGroups.Create": "انشاء مجموعة اذونات جديدى",
+    "Permission:PermissionGroups.Edit": "تعديل مجموعة اذونات"
+
   }
 }

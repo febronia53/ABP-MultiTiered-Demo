@@ -12,6 +12,15 @@ public class BookStorePermissionDefinitionProvider : PermissionDefinitionProvide
     {
         var bookStoreGroup = context.AddGroup(BookStorePermissions.GroupName, L("Permission:BookStore"));
 
+        //permission group
+        var permissionGroupsPermission = bookStoreGroup.AddPermission(
+            BookStorePermissions.PermissionGroups.Default, L("Permission:PermissionGroups"));
+        permissionGroupsPermission.AddChild(
+            BookStorePermissions.PermissionGroups.Create, L("Permission:PermissionGroups.Create"));
+        permissionGroupsPermission.AddChild(
+            BookStorePermissions.PermissionGroups.Edit, L("Permission:PermissionGroups.Edit"));
+
+
         var booksPermission = bookStoreGroup.AddPermission(BookStorePermissions.Books.Default, L("Permission:Books"));
         booksPermission.AddChild(BookStorePermissions.Books.Create, L("Permission:Books.Create"));
         booksPermission.AddChild(BookStorePermissions.Books.Edit, L("Permission:Books.Edit"));
@@ -33,7 +42,6 @@ public class BookStorePermissionDefinitionProvider : PermissionDefinitionProvide
         organizationUnitPermission.AddChild(BookStorePermissions.OrganizationUnits.Create, L("Permission:OrganizationUnits.Create"));
         organizationUnitPermission.AddChild(BookStorePermissions.OrganizationUnits.Edit, L("Permission:OrganizationUnits.Edit"));
         organizationUnitPermission.AddChild(BookStorePermissions.OrganizationUnits.Delete, L("Permission:OrganizationUnits.Delete"));
-
 
     }
 

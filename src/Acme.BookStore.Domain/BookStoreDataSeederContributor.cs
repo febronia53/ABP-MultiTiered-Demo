@@ -2,10 +2,12 @@
 using System.Threading.Tasks;
 using Acme.BookStore.Authors;
 using Acme.BookStore.Books;
+using Acme.BookStore.PermissionGroups;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Domain.Repositories;
 using Volo.Abp.Identity;
+using Volo.Abp.PermissionManagement;
 
 namespace Acme.BookStore;
 
@@ -17,13 +19,15 @@ public class BookStoreDataSeederContributor
     private readonly AuthorManager _authorManager;
     private readonly OrganizationUnitManager _organizationUnitsManager;
     private readonly IOrganizationUnitRepository _organizationUnitRepository;
+    private readonly IPermissionGroupRepository _permssionGroupRepository;
 
     public BookStoreDataSeederContributor(
         IRepository<Book, Guid> bookRepository,
         IAuthorRepository authorRepository,
         AuthorManager authorManager,
         OrganizationUnitManager organizationUnitManager,
-        IOrganizationUnitRepository organizationUnitRepository
+        IOrganizationUnitRepository organizationUnitRepository,
+        IPermissionGroupRepository permissionGroupRepository
         )
     {
         _bookRepository = bookRepository;
@@ -31,6 +35,7 @@ public class BookStoreDataSeederContributor
         _authorManager = authorManager;
         _organizationUnitsManager = organizationUnitManager;
         _organizationUnitRepository = organizationUnitRepository;
+        _permssionGroupRepository = permissionGroupRepository;
     }
 
     public async Task SeedAsync(DataSeedContext context)

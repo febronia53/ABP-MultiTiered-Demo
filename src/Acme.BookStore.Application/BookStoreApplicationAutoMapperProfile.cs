@@ -1,6 +1,7 @@
 ﻿using Acme.BookStore.Authors;
 using Acme.BookStore.Books;
 using Acme.BookStore.OrganizationUnits;
+using Acme.BookStore.PermissionGroups;
 using AutoMapper;
 using Volo.Abp.Identity;
 
@@ -22,5 +23,8 @@ public class BookStoreApplicationAutoMapperProfile : Profile
         CreateMap<OrganizationUnit, OrganizationUnitDto>();
         CreateMap<CreateOrganizationUnitDto, OrganizationUnitDto>();
         CreateMap<UpdateOrganizationUnitDto, OrganizationUnitDto>();
+
+
+        CreateMap<PermissionGroup, PermissionGroupDto>();
     }
 }

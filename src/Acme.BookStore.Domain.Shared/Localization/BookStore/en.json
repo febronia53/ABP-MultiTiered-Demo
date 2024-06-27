@@ -59,7 +59,14 @@
 
 
     "OrganizationUnitDeletionConfirmationMessage": "Are you sure to delete this organization '{0}'?",
-    "SuccessfullyDeleted": "Successfully deleted!"
+    "SuccessfullyDeleted": "Successfully deleted!",
+
+
+    //permission groups    
+    "Permission:PermissionGroups": "Permission Group Management",
+    "Permission:PermissionGroups.Create": "Creating new Permission Group",
+    "Permission:PermissionGroups.Edit": "Editing the Permission Group"
+
 
   }
 }
